@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/kkokko" />
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="후라이드"
+            android:gravity="center"
+            android:textSize="35dp"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="황금파우더가 선사하는 바삭함과\n육즙가득 터지는 부드러운 속살이\n일품인 환상적인 맛.
+"
+            android:gravity="center"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="      "/>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="가격"
+                android:textSize="25dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16,900원"
+                android:textSize="20dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="      "/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="음료수 사이즈 변경"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="424dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="콜라 1.25L로 변경" />
+
+            <TextView
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="+2,000원" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="      "/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="추가선택(추가선택 가능)"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="424dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="웨지감자" />
+
+            <TextView
+                android:layout_width="285dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="+2,500원" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="424dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="무 추가" />
+
+            <TextView
+                android:layout_width="295dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="+500원" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="424dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="델리소스 추가" />
+
+            <TextView
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="+500원" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="424dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="마요네즈 추가" />
+
+            <TextView
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="+500원" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="424dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="양념소스 추가" />
+
+            <TextView
+                android:layout_width="256dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="+500원" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="총 주문금액"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
+</LinearLayout>
