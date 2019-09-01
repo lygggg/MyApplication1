@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_weight="5"
             android:orientation="horizontal">
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:src="@drawable/yogiyo">
 
-</ImageView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:src="@drawable/yogiyo">
+
+            </ImageView>
         </LinearLayout>
 
         <LinearLayout
@@ -29,22 +36,24 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="171dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="3.4"
             android:orientation="horizontal">
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="0.1"/>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="15dp"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/pizza" />
 
                 <TextView
@@ -53,19 +62,21 @@
                     android:gravity="center"
                     android:text="피자" />
             </LinearLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="15dp"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/chinafood" />
 
                 <TextView
@@ -76,10 +87,15 @@
 
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
                 android:orientation="vertical">
 
 
@@ -87,7 +103,6 @@
                     android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/kkokko" />
 
                 <TextView
@@ -98,59 +113,67 @@
             </LinearLayout>
 
         </LinearLayout>
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="3.4"
             android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="15dp"
+                android:layout_weight="0.1"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="140dp"
+                    android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/bunsik" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29dp"
                     android:gravity="center"
-                    android:text="피자" />
+                    android:text="분식" />
             </LinearLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="15dp"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/hansik" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="26dp"
                     android:gravity="center"
-                    android:text="중국집" />
+                    android:text="한식" />
 
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
                 android:orientation="vertical">
 
 
@@ -158,70 +181,77 @@
                     android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/jokbal" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="26dp"
                     android:gravity="center"
-                    android:text="치킨" />
+                    android:text="족발" />
             </LinearLayout>
 
         </LinearLayout>
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="179dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="3.4"
             android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="15dp"
-                android:orientation="vertical">
+                android:layout_weight="1">
 
                 <ImageView
                     android:layout_width="140dp"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/sushi" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="29dp"
                     android:gravity="center"
-                    android:text="피자" />
+                    android:text="일식" />
             </LinearLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_marginRight="15dp"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/fastfood" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="26dp"
                     android:gravity="center"
-                    android:text="중국집" />
+                    android:text="햄버거" />
 
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_weight="0.1"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
                 android:orientation="vertical">
 
 
@@ -229,47 +259,49 @@
                     android:layout_width="120dp"
                     android:layout_height="100dp"
                     android:clickable="true"
-                    android:onClick="emong"
                     android:src="@drawable/bingsu" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="26dp"
                     android:gravity="center"
-                    android:text="치킨" />
+                    android:text="디저트" />
             </LinearLayout>
 
         </LinearLayout>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_weight="5"
+            android:weightSum="4"
             android:orientation="horizontal"
             android:background="#D8D8D8">
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:clickable="true"
-                android:onClick="emong"
                 android:src="@drawable/home" />
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:clickable="true"
-                android:onClick="emong"
                 android:src="@drawable/search" />
 
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:clickable="true"
-                android:onClick="emong"
                 android:src="@drawable/list" />
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:clickable="true"
-                android:onClick="emong"
                 android:src="@drawable/face" />
 
 

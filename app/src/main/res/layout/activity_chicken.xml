@@ -10,17 +10,24 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="93dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/bhc" />
-
+            android:orientation="horizontal"
+            android:weightSum="3">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.2">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bhc"
+                    />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="0.8"
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:layout_width="match_parent"
@@ -47,16 +54,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="93dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/KFC" />
+            android:orientation="horizontal"
+            android:weightSum="3">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="2.2">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/kfc"
+                />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -81,15 +95,20 @@
             android:layout_width="match_parent"
             android:layout_height="93dp"
             android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/mexican" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="2.2">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/mexican"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -116,15 +135,21 @@
             android:layout_height="93dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ddore" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="2.2">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ddo"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -152,14 +177,21 @@
             android:layout_height="93dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/kochon" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="2.2">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/kochon"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -186,14 +218,21 @@
             android:layout_height="93dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/jicova" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="2.2">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/jicova"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -221,15 +260,21 @@
             android:layout_height="93dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/pericana" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="2.2">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/pericana"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -256,14 +301,21 @@
             android:layout_height="93dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="106dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/godjip" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_weight="2.2">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/godjip"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="match_parent"
