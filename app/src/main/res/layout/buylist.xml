@@ -41,22 +41,6 @@
             android:layout_height="wrap_content"
             android:src="@drawable/yogiyo1"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="74dp"
-                android:layout_height="wrap_content"
-                android:text="결제 방법" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="요기서결제, 현장결제(카드/현금)" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,6 +68,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="47dp"
+            android:textStyle="bold"
             android:text="배달 목록" />
 
         <LinearLayout
@@ -101,7 +86,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="\n후라이드 치킨" />
+                    android:text="\n후라이드 치킨"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="285dp"
@@ -136,7 +122,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="\n양념 치킨" />
+                    android:text="\n양념 치킨"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="285dp"
@@ -171,7 +158,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="\n황금올리브 치킨" />
+                    android:text="\n황금올리브 치킨"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="285dp"

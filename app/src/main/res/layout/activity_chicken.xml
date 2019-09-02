@@ -33,6 +33,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="bhc-이태원점"
+                    android:textStyle="bold"
                     android:textSize="30dp" />
 
                 <TextView
@@ -76,6 +77,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="KFC-이태원점"
+                    android:textStyle="bold"
                     android:textSize="30dp" />
 
                 <TextView
@@ -114,6 +116,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="멕시칸-이태원점"
+                    android:textStyle="bold"
                     android:textSize="30dp" />
 
                 <TextView
@@ -155,6 +158,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="또래오래-이태원점"
+                    android:textStyle="bold"
                     android:textSize="30dp" />
 
                 <TextView
@@ -197,6 +201,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="교촌치킨-이태원점"
+                    android:textStyle="bold"
                     android:textSize="30dp" />
 
                 <TextView
@@ -238,6 +243,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="지코바-이태원점"
+                    android:textStyle="bold"
                     android:textSize="30dp" />
 
                 <TextView
@@ -280,6 +286,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="페리카나-이태원점"
+                    android:textStyle="bold"
                     android:textSize="30dp" />
 
                 <TextView
@@ -321,6 +328,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="처갓집-이태원점"
+                    android:textStyle="bold"
                     android:textSize="30dp" />
 
                 <TextView

@@ -55,7 +55,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="가격"
-                android:textSize="25dp" />
+                android:textSize="25dp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="0dp"

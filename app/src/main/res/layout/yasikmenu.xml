@@ -106,7 +106,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="47dp"
-            android:text="인기 메뉴" />
+            android:text="인기 메뉴"
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -121,7 +122,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="후라이드 치킨" />
+                    android:text="족발"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="285dp"
@@ -136,7 +138,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
-                    android:src="@drawable/huride" />
+                    android:src="@drawable/jokbal" />
             </LinearLayout>
 
         </LinearLayout>
@@ -153,7 +155,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="양념 치킨" />
+                    android:text="불 족발"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="285dp"
@@ -168,7 +171,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
-                    android:src="@drawable/spicy" />
+                    android:src="@drawable/firejok" />
             </LinearLayout>
 
         </LinearLayout>
@@ -185,7 +188,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="황금올리브 치킨" />
+                    android:text="떡볶이"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="285dp"
@@ -200,7 +204,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
-                    android:src="@drawable/huride" />
+                    android:src="@drawable/bunsik" />
             </LinearLayout>
 
         </LinearLayout>
@@ -217,7 +221,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="간장 치킨" />
+                    android:text="매운 닭발"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="285dp"
@@ -232,7 +237,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
-                    android:src="@drawable/ganjang" />
+                    android:src="@drawable/dakbal" />
             </LinearLayout>
 
         </LinearLayout>
@@ -249,7 +254,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="뿌링클 치킨" />
+                    android:text="닭 볶음탕"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="285dp"
@@ -264,7 +270,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
-                    android:src="@drawable/bburingcle" />
+                    android:src="@drawable/dakdori" />
             </LinearLayout>
 
         </LinearLayout>
