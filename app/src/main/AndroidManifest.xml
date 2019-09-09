@@ -16,6 +16,69 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SearchActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".ListActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".MyyogiyoActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".PizzamenuActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".ChickenMenuActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".ChinafoodMenuActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".BunsikMenuActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".HansikMenuActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".SushiMenuMenuActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".YasikMenuMenuActivity"
+            android:parentActivityName=".MainActivity">
+
+        </activity>
+        <activity android:name=".HurideActivity"
+            android:parentActivityName=".ChickenMenuActivity">
+
+        </activity>
+        <activity android:name="GanjangActivity"
+            android:parentActivityName=".ChickenMenuActivity">
+
+        </activity>
+        <activity android:name=".GoldoliveActivity"
+            android:parentActivityName=".ChickenMenuActivity">
+
+        </activity>
+
+        <activity android:name=".SpicyActivity"
+            android:parentActivityName=".ChickenMenuActivity">
+
+        </activity>
+        <activity android:name=".BburingcleActivity"
+            android:parentActivityName=".ChickenMenuActivity">
+
+        </activity>
+
+
+
     </application>
 
 </manifest>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -110,6 +109,7 @@
             android:textStyle="bold"/>
 
         <LinearLayout
+            android:id="@+id/btn_chicken_huride"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -142,6 +142,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_chicken_spicy"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -174,6 +175,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_chicken_goldolive"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -206,6 +208,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_chicken_ganjang"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -238,6 +241,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_chicken_bburingcle"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -272,5 +276,4 @@
 
     </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>
