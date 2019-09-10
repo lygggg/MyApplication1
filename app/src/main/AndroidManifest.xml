@@ -76,8 +76,22 @@
             android:parentActivityName=".ChickenMenuActivity">
 
         </activity>
+        <activity android:name=".GuideActivity"
+            android:parentActivityName=".MyyogiyoActivity">
 
+        </activity>
+        <activity android:name=".ChangeActivity"
+            android:parentActivityName=".MyyogiyoActivity">
 
+        </activity>
+        <activity android:name=".MembershipActivity"
+            android:parentActivityName=".MyyogiyoActivity">
+
+        </activity>
+        <activity android:name=".UsercenterActivity"
+            android:parentActivityName=".MyyogiyoActivity">
+
+        </activity>
 
     </application>
 

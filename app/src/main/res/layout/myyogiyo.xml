@@ -124,26 +124,31 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btn_myyogiyo_payment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="요기서 1초결제 관리" />
 
         <Button
+            android:id="@+id/btn_myyogiyo_event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="이벤트 및 공지사항" />
 
         <Button
+            android:id="@+id/btn_myyogiyo_recommend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="요기요 추천하기" />
 
         <Button
+            android:id="@+id/btn_myyogiyo_guide"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="요기요 안내" />
 
         <Button
+            android:id="@+id/btn_myyogiyo_center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="고객만족센터" />
