@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@android:color/darker_gray">
+
+
+    <LinearLayout
+        android:id="@+id/event1"
+        android:layout_width="409dp"
+        android:layout_height="99dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="2dp">
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="102dp"
+            android:layout_weight="3"
+            android:src="@drawable/kkokko" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:src="@drawable/spicy" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:src="@drawable/ganjang" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/event2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/event1"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/yogiyoevent" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/yogiyoevent2"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/event3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/event2"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_weight="2"
+            android:src="@drawable/yogiyoevent3" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="203dp"
+            android:layout_weight="2"
+            android:src="@drawable/yogiyoevent1" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_mainclass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="메인화면으로"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/event3"
+        app:layout_constraintVertical_bias="0.157" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

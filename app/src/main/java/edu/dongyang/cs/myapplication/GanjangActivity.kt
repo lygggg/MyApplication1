@@ -32,7 +32,7 @@ class GanjangActivity : AppCompatActivity() {
                 price += 500
                 ganjang_price.text = "가격: "+price
             } else
-                price -= 2000
+                price -= 500
             ganjang_price.text = "가격: "+price
 
 

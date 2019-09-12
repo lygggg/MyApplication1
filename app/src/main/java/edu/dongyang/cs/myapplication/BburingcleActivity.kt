@@ -31,7 +31,7 @@ class BburingcleActivity : AppCompatActivity() {
                 price += 500
                 bburingcle_price.text = "가격: "+price
             } else
-                price -= 2000
+                price -= 500
             bburingcle_price.text = "가격: "+price
 
 

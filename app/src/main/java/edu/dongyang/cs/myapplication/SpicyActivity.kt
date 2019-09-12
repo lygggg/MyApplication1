@@ -33,7 +33,7 @@ class SpicyActivity : AppCompatActivity() {
                 price += 500
                 spicy_price.text = "가격: "+price
             } else
-                price -= 2000
+                price -= 500
             spicy_price.text = "가격: "+price
 
 
