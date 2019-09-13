@@ -17,7 +17,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="요기요"
-                android:id="@+id/edtBannerText1"
+                android:id="@+id/make_Id"
                 android:singleLine="true"/>
         </TableRow>
         <TableRow>
@@ -34,7 +34,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="회원가입"
-                android:id="@+id/edtBannerText2"
+                android:id="@+id/make_password"
                 android:singleLine="true"/>
         </TableRow>
     </TableLayout>
@@ -50,7 +50,7 @@
             android:text="성명" />
         <!--android:text=""이 기본값-->
         <EditText
-            android:id="@+id/etName"
+            android:id="@+id/make_Name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
@@ -158,33 +158,35 @@
             android:layout_height="wrap_content"
             android:layout_weight="5">
 
-            <CheckBox
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="1회" />
+                android:layout_weight="5"
+                android:orientation="horizontal">
 
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="2회" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="3회" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="4회" />
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="5회" />
+                <RadioButton
+                    android:id="@+id/two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="1회" />
 
+                <RadioButton
+                    android:id="@+id/three"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2회" />
+                <RadioButton
+                    android:id="@+id/four"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3회" />
+                <RadioButton
+                    android:id="@+id/five"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4회" />
+            </RadioGroup>
 
         </LinearLayout>
 
@@ -240,7 +242,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btRegister"
+        android:id="@+id/finish_task"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"

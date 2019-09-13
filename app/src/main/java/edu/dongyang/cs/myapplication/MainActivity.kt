@@ -72,6 +72,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        btn_maps.setOnClickListener {
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
@@ -96,18 +100,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    override fun onStop() {
-        super.onStop()
-        setContentView(R.layout.event_activity)
-        btn_mainclass.setOnClickListener {
 
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-    }
 
     override fun onDestroy() {
         super.onDestroy()
+
         // The activity is about to be destroyed.
 
     }

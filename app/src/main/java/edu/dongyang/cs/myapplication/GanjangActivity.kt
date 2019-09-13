@@ -1,5 +1,6 @@
 package edu.dongyang.cs.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.buybburingcle.*
@@ -10,6 +11,7 @@ import kotlinx.android.synthetic.main.buybburingcle.plus_mu
 import kotlinx.android.synthetic.main.buybburingcle.plus_potato
 import kotlinx.android.synthetic.main.buyganjang.*
 import kotlinx.android.synthetic.main.buyhuride.*
+import kotlinx.android.synthetic.main.event_activity.*
 
 class GanjangActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,5 +77,14 @@ class GanjangActivity : AppCompatActivity() {
 
 
 
+    }
+    override fun onStop() {
+        super.onStop()
+        setContentView(R.layout.event_activity)
+        btn_mainclass.setOnClickListener {
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

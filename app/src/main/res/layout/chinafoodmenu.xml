@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -110,6 +113,7 @@
             android:textStyle="bold"/>
 
         <LinearLayout
+            android:id="@+id/btn_chinafood_zzazang"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -128,7 +132,7 @@
                 <TextView
                     android:layout_width="285dp"
                     android:layout_height="wrap_content"
-                    android:text="15000" />
+                    android:text="4500" />
             </LinearLayout>
 
             <LinearLayout
@@ -143,6 +147,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_chinafood_bokumbab"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -161,7 +166,7 @@
                 <TextView
                     android:layout_width="285dp"
                     android:layout_height="wrap_content"
-                    android:text="15000" />
+                    android:text="4500" />
             </LinearLayout>
 
             <LinearLayout
@@ -176,6 +181,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_chinafood_tangsu"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -194,7 +200,7 @@
                 <TextView
                     android:layout_width="285dp"
                     android:layout_height="wrap_content"
-                    android:text="15000" />
+                    android:text="4500" />
             </LinearLayout>
 
             <LinearLayout
@@ -209,6 +215,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_chinafood_falbochae"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -227,7 +234,7 @@
                 <TextView
                     android:layout_width="285dp"
                     android:layout_height="wrap_content"
-                    android:text="15000" />
+                    android:text="4500" />
             </LinearLayout>
 
             <LinearLayout
@@ -242,6 +249,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/btn_chinafood_jabchae"
             android:layout_width="match_parent"
             android:layout_height="84dp"
             android:orientation="horizontal">
@@ -260,7 +268,7 @@
                 <TextView
                     android:layout_width="285dp"
                     android:layout_height="wrap_content"
-                    android:text="15000" />
+                    android:text="4500" />
             </LinearLayout>
 
             <LinearLayout
@@ -279,3 +287,4 @@
 
 
 </LinearLayout>
+</ScrollView>

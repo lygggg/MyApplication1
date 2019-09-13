@@ -12,7 +12,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:src="@drawable/kkokko" />
+                android:src="@drawable/jabche" />
 
         </LinearLayout>
         <LinearLayout
@@ -24,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="후라이드"
+                android:text="잡채밥"
                 android:gravity="center"
                 android:textSize="35dp"
                 />
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="16,900원"
+                    android:text="4,500원"
                     android:textSize="20dp" />
             </LinearLayout>
 
@@ -93,7 +93,7 @@
             android:weightSum="2">
 
             <CheckBox
-                android:id="@+id/plus_colla"
+                android:id="@+id/chinafood_colla_plus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -129,11 +129,11 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/plus_potato"
+                    android:id="@+id/chinafood_mandu_plus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="웨지감자" />
+                    android:text="군만두" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -149,11 +149,11 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/plus_mu"
+                    android:id="@+id/chinafood_source_plus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="무 추가" />
+                    android:text="소스 추가" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -169,11 +169,11 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/plus_dellisauce"
+                    android:id="@+id/chinafood_zzambbong_plus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="델리소스 추가" />
+                    android:text="짬뽕국물 추가" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -189,11 +189,11 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/plus_mayosauce"
+                    android:id="@+id/chinafood_cucumble_plus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="마요네즈 추가" />
+                    android:text="오이 추가" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -209,11 +209,11 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/plus_spicyysauce"
+                    android:id="@+id/chinafood_fish_plus"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="양념소스 추가" />
+                    android:text="해물 추가" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -235,24 +235,13 @@
                 android:text="총 주문금액"
                 android:textSize="30dp"/>
             <TextView
-                android:id="@+id/huride_price"
+                android:id="@+id/china_jabchae_price"
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:textStyle="bold"/>
-            <TextView
-                android:id="@+id/textView1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
         </LinearLayout>
-        <Button
-            android:id="@+id/btn_buy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="결제하기"
-            android:layout_gravity="right"/>
-
     </LinearLayout>
 </ScrollView>
