@@ -29,52 +29,64 @@ class MainActivity : AppCompatActivity() {
         btn_main_search.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_buylist.setOnClickListener {
             val intent = Intent(this, ListActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_myyogiyo.setOnClickListener {
             val intent = Intent(this, MyyogiyoActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_home.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_pizza.setOnClickListener {
             val intent = Intent(this, PizzamenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_chinafood.setOnClickListener {
             val intent = Intent(this, ChinafoodMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_chicken.setOnClickListener {
             val intent = Intent(this, ChickenMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_bunsik.setOnClickListener {
             val intent = Intent(this, BunsikMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_hansik.setOnClickListener {
             val intent = Intent(this, YasikMenuMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_main_jokbal.setOnClickListener {
             val intent = Intent(this, YasikMenuMenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         btn_main_sushi.setOnClickListener {
             val intent = Intent(this, SushiMenuMenuActivity::class.java)
             startActivity(intent)
+            finish()
 
         }
         btn_maps.setOnClickListener {
             val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
 

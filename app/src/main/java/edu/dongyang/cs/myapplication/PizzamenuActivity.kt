@@ -13,22 +13,27 @@ class PizzamenuActivity : AppCompatActivity(){
         btn_pizza_combination.setOnClickListener {
             val intent = Intent(this, PizzaCombnationActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_pizza_goguma.setOnClickListener {
             val intent = Intent(this, PizzaGogumaActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_pizza_cheeze.setOnClickListener {
             val intent = Intent(this, PizzaCheezeActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_pizza_potato.setOnClickListener {
             val intent = Intent(this, PizzaPotatoActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_pizza_bulgogi.setOnClickListener {
             val intent = Intent(this, PizzaBulgogiActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

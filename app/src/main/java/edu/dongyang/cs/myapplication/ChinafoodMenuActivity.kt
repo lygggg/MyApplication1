@@ -12,22 +12,27 @@ class ChinafoodMenuActivity : AppCompatActivity(){
             btn_chinafood_zzazang.setOnClickListener {
                 val intent = Intent(this, ZzazangActivivy::class.java)
                 startActivity(intent)
+                finish()
             }
             btn_chinafood_bokumbab.setOnClickListener {
                 val intent = Intent(this, BokumbabActivity::class.java)
                 startActivity(intent)
+                finish()
             }
             btn_chinafood_tangsu.setOnClickListener {
                 val intent = Intent(this, TangsuActivity::class.java)
                 startActivity(intent)
+                finish()
             }
             btn_chinafood_falbochae.setOnClickListener {
                 val intent = Intent(this, FalbochaeActivity::class.java)
                 startActivity(intent)
+                finish()
             }
             btn_chinafood_jabchae.setOnClickListener {
                 val intent = Intent(this, JabchaeActivity::class.java)
                 startActivity(intent)
+                finish()
             }
 
         }

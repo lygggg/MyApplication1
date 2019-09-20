@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,11 +69,17 @@
                android:numStars="5"
                android:layout_gravity="center_horizontal"/>
             <TextView
-                android:id="@+id/mainTv"
+                android:id="@+id/main_Tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 />
+            <ImageView
+                android:id="@+id/main_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
             <Button
                 android:id="@+id/btn_review"
                 android:layout_width="wrap_content"
@@ -102,20 +115,56 @@
 
 
         <Switch
-            android:layout_weight="1.6"
             android:id="@+id/switch1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1.6"
 
             android:text="사진리뷰만" />
 
 
     </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+
+        >
+
+
+        <Button
+            android:id="@+id/btn_review_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수정"
+            android:layout_gravity="center"/>
+        <Button
+            android:id="@+id/btn_review_elimination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제"
+
+           />
+        <Button
+            android:id="@+id/loadImage_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진 가져오기"
+
+            />
+
 
 
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_review_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_review"
+        />
+
+
 </LinearLayout>
+</ScrollView>

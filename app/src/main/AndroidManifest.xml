@@ -9,11 +9,12 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="요기요"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -59,7 +60,10 @@
             android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".ChickenMenuActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity">
+
+
+        </activity>
         <activity
             android:name=".ChinafoodMenuActivity"
             android:parentActivityName=".MainActivity"></activity>
@@ -135,9 +139,7 @@
         <activity
             android:name=".joinActivity"
             android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".CustomerReview"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
+
         <activity
             android:name=".ReviewActivity"
             android:parentActivityName=".MyyogiyoActivity"></activity>

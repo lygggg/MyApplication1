@@ -23,19 +23,23 @@ class MyyogiyoActivity : AppCompatActivity(){
         btn_myyogiyo_payment.setOnClickListener {
             val intent = Intent(this, MembershipActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         btn_myyogiyo_guide.setOnClickListener {
             val intent = Intent(this, GuideActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_myyogiyo_center.setOnClickListener {
             val intent = Intent(this, UsercenterActivity::class.java)
             startActivity(intent)
+            finish()
         }
         btn_login.setOnClickListener {
             val intent = Intent(this, joinActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

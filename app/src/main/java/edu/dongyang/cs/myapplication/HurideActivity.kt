@@ -87,6 +87,7 @@ class HurideActivity : AppCompatActivity() {
         btn_buy.setOnClickListener {
             val intent = Intent(this, ReviewActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
 
@@ -100,6 +101,7 @@ class HurideActivity : AppCompatActivity() {
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
     }

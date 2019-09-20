@@ -21,6 +21,7 @@ class joinActivity : AppCompatActivity() {
             startActivity(idintent)
             idintent.putExtra("nameTitle",make_Name.text.toString())
             startActivity(idintent)
+            finish()
         }
 
         Toast.makeText(this, "환영합니다", Toast.LENGTH_SHORT).show()
