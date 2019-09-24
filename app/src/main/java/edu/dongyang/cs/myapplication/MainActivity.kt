@@ -1,22 +1,16 @@
 package edu.dongyang.cs.myapplication
 
 import android.content.Intent
-import android.media.Image
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.RatingBar
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_menu.*
-import kotlinx.android.synthetic.main.event_activity.*
-import kotlinx.android.synthetic.main.membership.*
 
 class MainActivity : AppCompatActivity() {
     var mediaPlayer : MediaPlayer?= null
-
+    private  var first_time : Long = 0
+    private  var second_time : Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -29,67 +23,81 @@ class MainActivity : AppCompatActivity() {
         btn_main_search.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_buylist.setOnClickListener {
-            val intent = Intent(this, ListActivity::class.java)
+            val intent = Intent(this, BuyListActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_myyogiyo.setOnClickListener {
             val intent = Intent(this, MyyogiyoActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_home.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_pizza.setOnClickListener {
             val intent = Intent(this, PizzamenuActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_chinafood.setOnClickListener {
             val intent = Intent(this, ChinafoodMenuActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_chicken.setOnClickListener {
             val intent = Intent(this, ChickenMenuActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_bunsik.setOnClickListener {
             val intent = Intent(this, BunsikMenuActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_hansik.setOnClickListener {
             val intent = Intent(this, YasikMenuMenuActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
         btn_main_jokbal.setOnClickListener {
             val intent = Intent(this, YasikMenuMenuActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
 
         btn_main_sushi.setOnClickListener {
             val intent = Intent(this, SushiMenuMenuActivity::class.java)
             startActivity(intent)
-            finish()
+
 
         }
         btn_maps.setOnClickListener {
             val intent = Intent(this, MapsActivity::class.java)
             startActivity(intent)
-            finish()
+
         }
 
 
+
+
+
+
+
+    }
+
+    override fun onBackPressed() {
+        second_time = System.currentTimeMillis()
+        if(second_time - first_time < 2000){
+            super.onBackPressed()
+            finish()
+        }else Toast.makeText(this,"뒤로가기 버튼을 한 번 더 누르시면 종료!",Toast.LENGTH_SHORT).show()
+        first_time = System.currentTimeMillis()
 
     }
     override fun onStart() {

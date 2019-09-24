@@ -16,6 +16,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.drawToBitmap
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_review.*
 import kotlinx.android.synthetic.main.activity_review.mainRb
 import kotlinx.android.synthetic.main.item_review.*
@@ -26,19 +29,46 @@ import javax.xml.transform.Templates
 
 class ReviewActivity : AppCompatActivity(){
 
-var pos = 0
-
+    var pos = 0
+    val gson = Gson()
     private val adapter by lazy{
         ReviewListAdapter()
+    }
+    private val pref by lazy {
+        this.getPreferences(0)
+    }
+    private val editor by lazy {
+        pref.edit()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_review)
 
+
+        btn_review.setOnClickListener {
+
+
+          var addff = adapter.addItem(Buyreview(main_Tv.text.toString(),mainRb.rating,main_image.drawable))
+            addff
+            var listType : TypeToken<MutableList<Buyreview>> = object : TypeToken<MutableList<Buyreview>>(){}
+            var srtContact = gson.toJson(addff,listType.type)
+            if(pos>=0){
+                editor.putStringSet("review${pos}",srtContact)
+                editor.commit()
+
+            }
+        }
+
         rv_review_list.adapter = adapter
-        rv_review_list.layoutManager = LinearLayoutManager(this)
+        rv_review_list.layoutManager = LinearLayoutManager(      this)
         rv_review_list.setHasFixedSize(true)
 
+        if(pos>0){
+
+            for(i in 1..pos){
+
+            }
+        }
 
 //BUTTON CLICK
         loadImage_button.setOnClickListener {
@@ -65,18 +95,11 @@ var pos = 0
 
 
 
-        btn_review.setOnClickListener {
 
-            adapter.addItem(Buyreview(main_Tv.text.toString(),mainRb.rating,main_image.drawable))
-
-
-
-        }
 
 
         val builder1 = AlertDialog.Builder(this)
         val dialogView = layoutInflater.inflate(R.layout.customerreview,null)
-
         val dialogText = dialogView.findViewById<EditText>(R.id.dialogEt)
         val dialogRatingBar = dialogView.findViewById<RatingBar>(R.id.dialogRb)
 

@@ -5,6 +5,6 @@ import android.graphics.drawable.Drawable
 import android.media.Image
 import android.media.Rating
 
-data class Buyreview(
-    val title: String, val ratingbar : Float, val reviewImage : Drawable
+data class BuyList(
+    val name : String, val price : String, val buyListImage : Drawable
 )
