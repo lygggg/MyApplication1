@@ -15,6 +15,7 @@ import kotlinx.android.synthetic.main.buyhuride.*
 import kotlinx.android.synthetic.main.event_activity.*
 import kotlinx.android.synthetic.main.guide.*
 import kotlinx.android.synthetic.main.guide.view.*
+import org.jetbrains.anko.image
 
 class HurideActivity : AppCompatActivity() {
 
@@ -86,9 +87,13 @@ class HurideActivity : AppCompatActivity() {
         }
         btn_buy.setOnClickListener {
             val intent = Intent(this, ReviewActivity::class.java)
+            val buyintent = Intent(this,BuyListActivity::class.java)
+            buyintent.putExtra("nameKey",menu_name_huride.text.toString())
+            buyintent.putExtra("priceKey",menu_price_huride.text.toString())
             startActivity(intent)
             finish()
         }
+
 
 
 

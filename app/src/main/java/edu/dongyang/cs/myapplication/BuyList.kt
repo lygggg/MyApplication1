@@ -6,5 +6,5 @@ import android.media.Image
 import android.media.Rating
 
 data class BuyList(
-    val name : String, val price : String, val buyListImage : Drawable
+    val name : String, val price : String
 )

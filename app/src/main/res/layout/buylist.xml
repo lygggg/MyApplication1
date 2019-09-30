@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,6 +25,7 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_buylist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -38,13 +43,13 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/yogiyo1"/>
+            android:layout_height="59dp"
+            android:src="@drawable/yogiyo1" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <TextView
@@ -62,126 +67,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="523dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="47dp"
-            android:textStyle="bold"
-            android:text="배달 목록" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="84dp"
-            android:orientation="horizontal"
-            android:weightSum="8">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="5.8">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="\n후라이드 치킨"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="285dp"
-                    android:layout_height="wrap_content"
-                    android:text="15000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_buy_list"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2.2">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="68dp"
-                    android:src="@drawable/huride" />
-            </LinearLayout>
+                tools:itemCount="10"
+                tools:listitem="@layout/buy_list"
+                />
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="84dp"
-            android:orientation="horizontal"
-            android:weightSum="8">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="5.8">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="\n양념 치킨"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="285dp"
-                    android:layout_height="wrap_content"
-                    android:text="15000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.2">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="68dp"
-                    android:src="@drawable/spicy" />
-            </LinearLayout>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="84dp"
-            android:orientation="horizontal"
-            android:weightSum="8">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="5.8">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="\n황금올리브 치킨"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="285dp"
-                    android:layout_height="wrap_content"
-                    android:text="15000" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2.2">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="68dp"
-                    android:src="@drawable/huride" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-
-
 </LinearLayout>
-</LinearLayout>
+</ScrollView>

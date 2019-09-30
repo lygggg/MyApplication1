@@ -4,34 +4,28 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.os.Build
 import android.os.Bundle
-import android.provider.MediaStore
 import android.util.Log
-import android.view.*
-import android.widget.*
+import android.view.MenuItem
+import android.view.MotionEvent
+import android.widget.EditText
+import android.widget.RatingBar
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.drawToBitmap
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_review.*
-import kotlinx.android.synthetic.main.activity_review.mainRb
-import kotlinx.android.synthetic.main.item_review.*
-import kotlinx.android.synthetic.main.reviewmodify.*
-import kotlinx.android.synthetic.main.search.*
-import java.lang.Exception
-import javax.xml.transform.Templates
+import org.json.JSONArray
+import org.json.JSONObject
 
-class ReviewActivity : AppCompatActivity(){
+class ReviewActivity: AppCompatActivity() {
 
     var pos = 0
-    val gson = Gson()
-    private val adapter by lazy{
+    val jsonObject = JSONObject()
+    val jsonArray = JSONArray()
+    private val adapter by lazy {
         ReviewListAdapter()
     }
     private val pref by lazy {
@@ -40,32 +34,46 @@ class ReviewActivity : AppCompatActivity(){
     private val editor by lazy {
         pref.edit()
     }
+    var memoSize: Int =0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_review)
 
 
+
+
+
         btn_review.setOnClickListener {
 
-
-          var addff = adapter.addItem(Buyreview(main_Tv.text.toString(),mainRb.rating,main_image.drawable))
-            addff
-            var listType : TypeToken<MutableList<Buyreview>> = object : TypeToken<MutableList<Buyreview>>(){}
-            var srtContact = gson.toJson(addff,listType.type)
-            if(pos>=0){
-                editor.putStringSet("review${pos}",srtContact)
-                editor.commit()
+            adapter.addItem(Buyreview(main_Tv.text.toString(), mainRb.rating, main_image.drawable))
+            if (memoSize >= 0) {
+                jsonObject.put("name", main_Tv.text.toString())
+                jsonObject.put("rating", mainRb.rating)
+                jsonObject.put("image", main_image.drawable)
+                jsonArray.put(jsonObject)
+                editor.putString("review${adapter.items.size}",jsonObject.toString())
+                editor.apply()
+                memoSize++
+                editor.putInt("memoSize", memoSize).apply()
+                Log.d("TAG", "메세지 ==>" + pos)
 
             }
         }
-
         rv_review_list.adapter = adapter
-        rv_review_list.layoutManager = LinearLayoutManager(      this)
+        rv_review_list.layoutManager = LinearLayoutManager(this)
         rv_review_list.setHasFixedSize(true)
 
-        if(pos>0){
+        memoSize = pref.getInt("memoSize", 0)
+        if (memoSize > 0) {
 
-            for(i in 1..pos){
+            Log.d("TAG", "메세지 ==>" + memoSize)
+            for (i in 1..memoSize) {
+                Log.d("TAG", "메세지 ==>" + "end")
+                var name = pref.getString("name","")
+                var img = pref.getString("image","")
+                var ratingBar = pref.getFloat("rating","")
+                adapter.addItem(Buyreview(name,ratingBar,img))
+
 
             }
         }
@@ -73,56 +81,51 @@ class ReviewActivity : AppCompatActivity(){
 //BUTTON CLICK
         loadImage_button.setOnClickListener {
             //check runtime permission
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
-                        PackageManager.PERMISSION_DENIED){
+                        PackageManager.PERMISSION_DENIED) {
                     //permission denied
                     val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
                     //show popup to request runtime permission
                     requestPermissions(permissions, PERMISSION_CODE)
-                }
-                else{
+                } else {
                     //permission already granted
                     pickImageFromGallery()
                 }
-            }
-            else{
+            } else {
                 //system OS is < Marshmallow
                 pickImageFromGallery()
             }
         }
 
 
-
-
-
-
-
         val builder1 = AlertDialog.Builder(this)
-        val dialogView = layoutInflater.inflate(R.layout.customerreview,null)
+        val dialogView = layoutInflater.inflate(R.layout.customerreview, null)
         val dialogText = dialogView.findViewById<EditText>(R.id.dialogEt)
         val dialogRatingBar = dialogView.findViewById<RatingBar>(R.id.dialogRb)
 
         builder1.setView(dialogView)
-            .setPositiveButton("확인") { dialogInterface, i ->
-                main_Tv.text = dialogText.text.toString()
-                mainRb.rating = dialogRatingBar.rating
-                /* 확인일 때 main의 View의 값에 dialog View에 있는 값을 적용 */
+                .setPositiveButton("확인") { dialogInterface, i ->
+                    main_Tv.text = dialogText.text.toString()
+                    mainRb.rating = dialogRatingBar.rating
+                    /* 확인일 때 main의 View의 값에 dialog View에 있는 값을 적용 */
 
-            }
-            .setNegativeButton("취소") { dialogInterface, i ->
-                /* 취소일 때 아무 액션이 없으므로 빈칸 */
-            }
-            .show()
+                }
+                .setNegativeButton("취소") { dialogInterface, i ->
+                    /* 취소일 때 아무 액션이 없으므로 빈칸 */
+                }
+                .show()
 
-        rv_review_list.addOnItemTouchListener(object : RecyclerView.OnItemTouchListener{
+        rv_review_list.addOnItemTouchListener(object : RecyclerView.OnItemTouchListener {
 
             override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
 
             }
+
             override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
                 val child = rv_review_list.findChildViewUnder(e.x, e.y)
                 pos = rv_review_list.getChildAdapterPosition(child!!)
+
                 return false
 
             }
@@ -136,30 +139,29 @@ class ReviewActivity : AppCompatActivity(){
     }
 
     override fun onContextItemSelected(item: MenuItem?): Boolean {
-        Log.d("TAG", "메세지" +pos+"sel")
+        Log.d("TAG", "메세지" + pos + "sel")
 
-        when(item?.itemId){
+        when (item?.itemId) {
 
-             R.id.modify_dialog ->{
-                 Log.d("TAG", "메세지" +pos)
-                 val builder = AlertDialog.Builder(this)
-                 val dialogView = layoutInflater.inflate(R.layout.reviewmodify,null)
-                 val dialogmodify = dialogView.findViewById<EditText>(R.id.dialog_review_modify)
+            R.id.modify_dialog -> {
+                Log.d("TAG", "메세지" + pos)
+                val builder = AlertDialog.Builder(this)
+                val dialogView = layoutInflater.inflate(R.layout.reviewmodify, null)
+                val dialogmodify = dialogView.findViewById<EditText>(R.id.dialog_review_modify)
 
-                 builder.setView(dialogView)
-                         .setPositiveButton("확인") { dialogInterface, i ->
-                             adapter.removeItem(pos)
-                             adapter.addItem1(pos,Buyreview(dialogmodify.text.toString(),mainRb.rating,main_image.drawable))
+                builder.setView(dialogView)
+                        .setPositiveButton("확인") { dialogInterface, i ->
+                            adapter.removeItem(pos)
+                            adapter.addItem1(pos, Buyreview(dialogmodify.text.toString(), mainRb.rating, main_image.drawable))
 
 
+                        }
+                        .setNegativeButton("취소") { dialogInterface, i ->
 
-                         }
-                         .setNegativeButton("취소") { dialogInterface, i ->
+                        }.show()
 
-                         }.show()
-
-             }
-            R.id.remove_dialog ->{
+            }
+            R.id.remove_dialog -> {
                 adapter.removeItem(pos)
 
             }
@@ -184,14 +186,13 @@ class ReviewActivity : AppCompatActivity(){
 
     //handle requested permission result
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
-        when(requestCode){
+        when (requestCode) {
             PERMISSION_CODE -> {
-                if (grantResults.size >0 && grantResults[0] ==
-                        PackageManager.PERMISSION_GRANTED){
+                if (grantResults.size > 0 && grantResults[0] ==
+                        PackageManager.PERMISSION_GRANTED) {
                     //permission from popup granted
                     pickImageFromGallery()
-                }
-                else{
+                } else {
                     //permission from popup denied
                     Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
                 }
@@ -201,13 +202,10 @@ class ReviewActivity : AppCompatActivity(){
 
     //handle result of picked image
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE){
+        if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE) {
             main_image.setImageURI(data?.data)
         }
     }
-
-
-
 
 
 

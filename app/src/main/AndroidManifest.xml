@@ -17,6 +17,7 @@
         android:label="요기요"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".YogiyoApp"
         android:theme="@style/AppTheme">
 
         <!--
@@ -50,7 +51,7 @@
             android:name=".SearchActivity"
             android:parentActivityName=".MainActivity"></activity>
         <activity
-            android:name=".ListActivity"
+            android:name=".BuyListActivity"
             android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".MyyogiyoActivity"

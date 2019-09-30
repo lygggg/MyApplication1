@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.buy_list.view.*
 import kotlinx.android.synthetic.main.item_review.view.*
 import org.jetbrains.anko.image
+import org.json.JSONObject
 
 class BuyListAdapter : RecyclerView.Adapter<BuyListAdapter.TaskViewHolder>() {
 
@@ -29,7 +30,7 @@ class BuyListAdapter : RecyclerView.Adapter<BuyListAdapter.TaskViewHolder>() {
         Log.d("onBindViewholder", ""+position)
         holder.BuyListName.text = items[position].name
         holder.BuyListPrice.text = items[position].price
-        holder.BuyListImage.image = items[position].buyListImage
+
 
     }
 
@@ -41,8 +42,6 @@ class BuyListAdapter : RecyclerView.Adapter<BuyListAdapter.TaskViewHolder>() {
     class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var BuyListName: TextView = itemView?.tv_buy_name
         var BuyListPrice: TextView = itemView?.tv_buy_price
-        var BuyListImage: ImageView = itemView?.tv_buy_image
-
     }
 
 }

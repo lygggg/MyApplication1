@@ -10,6 +10,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/menu_image_huride"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
                 android:src="@drawable/kkokko" />
@@ -22,6 +23,7 @@
             android:gravity="center">
 
             <TextView
+                android:id="@+id/menu_name_huride"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="후라이드"
@@ -62,6 +64,7 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@+id/menu_price_huride"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
