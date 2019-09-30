@@ -1,9 +1,18 @@
 package edu.dongyang.cs.myapplication
 
+import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.AnimationDrawable
 import android.os.Bundle
+import android.os.Handler
+import android.view.ContextThemeWrapper
 import android.view.View
+import android.widget.ImageView
+import android.widget.ProgressBar
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDialog
 import kotlinx.android.synthetic.main.buybburingcle.*
 import kotlinx.android.synthetic.main.buybburingcle.plus_colla
 import kotlinx.android.synthetic.main.buybburingcle.plus_dellisauce
@@ -18,6 +27,10 @@ import kotlinx.android.synthetic.main.guide.view.*
 import org.jetbrains.anko.image
 
 class HurideActivity : AppCompatActivity() {
+    lateinit var mHandler : Handler
+    lateinit var mRunnable: Runnable
+    lateinit var animationDrawable :AnimationDrawable
+    lateinit var mProgressBar: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,10 +99,17 @@ class HurideActivity : AppCompatActivity() {
 
         }
         btn_buy.setOnClickListener {
+            val progressDialog = ProgressDialog(this)
+            progressDialog.setMessage("결제 처리중입니다...")
+            progressDialog.setCancelable(false)
+            progressDialog.show()
+            Handler().postDelayed({progressDialog.dismiss()},5000)
+
             val intent = Intent(this, ReviewActivity::class.java)
             val buyintent = Intent(this,BuyListActivity::class.java)
             buyintent.putExtra("nameKey",menu_name_huride.text.toString())
             buyintent.putExtra("priceKey",menu_price_huride.text.toString())
+
             startActivity(intent)
             finish()
         }
@@ -109,4 +129,7 @@ class HurideActivity : AppCompatActivity() {
             finish()
         }
     }
+
+
+
     }

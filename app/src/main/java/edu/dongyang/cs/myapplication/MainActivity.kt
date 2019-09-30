@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
     private  var second_time : Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
 

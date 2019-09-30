@@ -16,26 +16,7 @@ class ChickenMenuActivity : AppCompatActivity(){
             startActivity(intent)
             finish()
         }
-        btn_chicken_spicy.setOnClickListener {
-            val intent = Intent(this, SpicyActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        btn_chicken_ganjang.setOnClickListener {
-            val intent = Intent(this, GanjangActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        btn_chicken_goldolive.setOnClickListener {
-            val intent = Intent(this, GoldoliveActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        btn_chicken_bburingcle.setOnClickListener {
-            val intent = Intent(this, BburingcleActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
+
 
     }
 }

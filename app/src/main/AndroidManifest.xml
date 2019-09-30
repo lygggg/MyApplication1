@@ -62,8 +62,15 @@
         <activity
             android:name=".ChickenMenuActivity"
             android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
 
-
+            </intent-filter>
         </activity>
         <activity
             android:name=".ChinafoodMenuActivity"
@@ -83,18 +90,7 @@
         <activity
             android:name=".HurideActivity"
             android:parentActivityName=".ChickenMenuActivity"></activity>
-        <activity
-            android:name=".GanjangActivity"
-            android:parentActivityName=".ChickenMenuActivity"></activity>
-        <activity
-            android:name=".GoldoliveActivity"
-            android:parentActivityName=".ChickenMenuActivity"></activity>
-        <activity
-            android:name=".SpicyActivity"
-            android:parentActivityName=".ChickenMenuActivity"></activity>
-        <activity
-            android:name=".BburingcleActivity"
-            android:parentActivityName=".ChickenMenuActivity"></activity>
+
         <activity
             android:name=".GuideActivity"
             android:parentActivityName=".MyyogiyoActivity"></activity>
@@ -107,33 +103,11 @@
         <activity
             android:name=".UsercenterActivity"
             android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".BokumbabActivity"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
+
         <activity
             android:name=".ZzazangActivivy"
             android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".TangsuActivity"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".JabchaeActivity"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".FalbochaeActivity"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".PizzaBulgogiActivity"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".PizzaCheezeActivity"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".PizzaPotatoActivity"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
-        <activity
-            android:name=".PizzaGogumaActivity"
-            android:parentActivityName=".MyyogiyoActivity"></activity>
+
         <activity
             android:name=".PizzaCombnationActivity"
             android:parentActivityName=".MyyogiyoActivity"></activity>

@@ -2,6 +2,7 @@ package edu.dongyang.cs.myapplication
 
 import android.Manifest
 import android.app.Activity
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
@@ -14,9 +15,13 @@ import android.widget.RatingBar
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_review.*
+import kotlinx.android.synthetic.main.item_review.*
+import kotlinx.android.synthetic.main.reviewmodify.*
+import org.jetbrains.anko.progressDialog
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -25,6 +30,7 @@ class ReviewActivity: AppCompatActivity() {
     var pos = 0
     val jsonObject = JSONObject()
     val jsonArray = JSONArray()
+
     private val adapter by lazy {
         ReviewListAdapter()
     }
@@ -70,9 +76,7 @@ class ReviewActivity: AppCompatActivity() {
             for (i in 1..memoSize) {
                 Log.d("TAG", "메세지 ==>" + "end")
                 var name = pref.getString("name","")
-                var img = pref.getString("image","")
-                var ratingBar = pref.getFloat("rating","")
-                adapter.addItem(Buyreview(name,ratingBar,img))
+
 
 
             }
@@ -147,6 +151,7 @@ class ReviewActivity: AppCompatActivity() {
                 Log.d("TAG", "메세지" + pos)
                 val builder = AlertDialog.Builder(this)
                 val dialogView = layoutInflater.inflate(R.layout.reviewmodify, null)
+                dialog_review_modify.setText(tv_task_name.toString())
                 val dialogmodify = dialogView.findViewById<EditText>(R.id.dialog_review_modify)
 
                 builder.setView(dialogView)
