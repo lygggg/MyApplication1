@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="wrap_content"
+android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:orientation="vertical">
 
@@ -18,7 +18,7 @@ android:orientation="vertical">
     android:textStyle="bold" />
 
 <RatingBar
-    android:id="@+id/dialogRb"
+    android:id="@+id/customerRb"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
@@ -26,13 +26,38 @@ android:orientation="vertical">
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     android:numStars="5" />
+
+
 <EditText
-    android:id="@+id/dialogEt"
+    android:id="@+id/customerRview"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="150dp"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     android:ems="10"
-    android:hint="텍스트를 입력해주세요."
-    android:inputType="textPersonName" />
+    android:hint="사진과 함께 리뷰 작성시 최대 100포인트 "
+    android:inputType="textMultiLine|textNoSuggestions"
+    android:gravity="top"
+    android:maxLength="200"
+    android:background="@drawable/edittextline"/>
+    <ImageView
+        android:id="@+id/customerImage"
+        android:layout_width="260dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/btn_customerImage"
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="사진추가"/>
+    <Button
+
+        android:layout_gravity="right"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="리뷰추가"
+        android:id="@+id/btn_customer_Review"/>
 </LinearLayout>

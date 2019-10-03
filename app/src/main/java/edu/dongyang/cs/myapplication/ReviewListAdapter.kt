@@ -2,6 +2,7 @@ package edu.dongyang.cs.myapplication
 
 import android.content.ClipData
 import android.content.Context
+import android.os.AsyncTask
 import android.util.Log
 import android.view.*
 import android.widget.ImageView

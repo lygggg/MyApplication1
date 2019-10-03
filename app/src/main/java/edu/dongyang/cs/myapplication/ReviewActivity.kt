@@ -5,13 +5,16 @@ import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.widget.EditText
 import android.widget.RatingBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_review.*
 import kotlinx.android.synthetic.main.item_review.*
 import kotlinx.android.synthetic.main.reviewmodify.*
+import org.jetbrains.anko.appcompat.v7.buttonBarLayout
 import org.jetbrains.anko.progressDialog
 import org.json.JSONArray
 import org.json.JSONObject
@@ -30,6 +34,10 @@ class ReviewActivity: AppCompatActivity() {
     var pos = 0
     val jsonObject = JSONObject()
     val jsonArray = JSONArray()
+    lateinit var mHandler: Handler
+    lateinit var mRunnable: Runnable
+
+
 
     private val adapter by lazy {
         ReviewListAdapter()
@@ -40,7 +48,7 @@ class ReviewActivity: AppCompatActivity() {
     private val editor by lazy {
         pref.edit()
     }
-    var memoSize: Int =0
+    var memoSize: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_review)
@@ -49,21 +57,18 @@ class ReviewActivity: AppCompatActivity() {
 
 
 
-        btn_review.setOnClickListener {
+        btn_Review.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            val dialogView = layoutInflater.inflate(R.layout.progress_dialog, null)
+            val message = dialogView.findViewById<TextView>(R.id.message)
+            message.text = "리뷰 작성중..."
+            builder.setView(dialogView)
+            builder.setCancelable(false)
+            val dialog = builder.create()
+            dialog.show()
+            Handler().postDelayed({ dialog.dismiss() }, 3000)
+            adapter.addItem(Buyreview(main_rv.text.toString(), main_rb.rating, main_image.drawable))
 
-            adapter.addItem(Buyreview(main_Tv.text.toString(), mainRb.rating, main_image.drawable))
-            if (memoSize >= 0) {
-                jsonObject.put("name", main_Tv.text.toString())
-                jsonObject.put("rating", mainRb.rating)
-                jsonObject.put("image", main_image.drawable)
-                jsonArray.put(jsonObject)
-                editor.putString("review${adapter.items.size}",jsonObject.toString())
-                editor.apply()
-                memoSize++
-                editor.putInt("memoSize", memoSize).apply()
-                Log.d("TAG", "메세지 ==>" + pos)
-
-            }
         }
         rv_review_list.adapter = adapter
         rv_review_list.layoutManager = LinearLayoutManager(this)
@@ -75,50 +80,37 @@ class ReviewActivity: AppCompatActivity() {
             Log.d("TAG", "메세지 ==>" + memoSize)
             for (i in 1..memoSize) {
                 Log.d("TAG", "메세지 ==>" + "end")
-                var name = pref.getString("name","")
-
+                var name = pref.getString("name", "")
 
 
             }
         }
 
 //BUTTON CLICK
-        loadImage_button.setOnClickListener {
+        btn_bring_photo.setOnClickListener {
+
             //check runtime permission
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) ==
-                        PackageManager.PERMISSION_DENIED) {
+                    PackageManager.PERMISSION_DENIED
+                ) {
                     //permission denied
-                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE);
+                    val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE)
                     //show popup to request runtime permission
                     requestPermissions(permissions, PERMISSION_CODE)
                 } else {
                     //permission already granted
-                    pickImageFromGallery()
+                        pickImageFromGallery()
                 }
             } else {
-                //system OS is < Marshmallow
-                pickImageFromGallery()
+                    pickImageFromGallery()
             }
+
+
         }
 
 
-        val builder1 = AlertDialog.Builder(this)
-        val dialogView = layoutInflater.inflate(R.layout.customerreview, null)
-        val dialogText = dialogView.findViewById<EditText>(R.id.dialogEt)
-        val dialogRatingBar = dialogView.findViewById<RatingBar>(R.id.dialogRb)
 
-        builder1.setView(dialogView)
-                .setPositiveButton("확인") { dialogInterface, i ->
-                    main_Tv.text = dialogText.text.toString()
-                    mainRb.rating = dialogRatingBar.rating
-                    /* 확인일 때 main의 View의 값에 dialog View에 있는 값을 적용 */
-
-                }
-                .setNegativeButton("취소") { dialogInterface, i ->
-                    /* 취소일 때 아무 액션이 없으므로 빈칸 */
-                }
-                .show()
 
         rv_review_list.addOnItemTouchListener(object : RecyclerView.OnItemTouchListener {
 
@@ -155,15 +147,22 @@ class ReviewActivity: AppCompatActivity() {
                 val dialogmodify = dialogView.findViewById<EditText>(R.id.dialog_review_modify)
 
                 builder.setView(dialogView)
-                        .setPositiveButton("확인") { dialogInterface, i ->
-                            adapter.removeItem(pos)
-                            adapter.addItem1(pos, Buyreview(dialogmodify.text.toString(), mainRb.rating, main_image.drawable))
+                    .setPositiveButton("확인") { dialogInterface, i ->
+                        adapter.removeItem(pos)
+                        adapter.addItem1(
+                            pos,
+                            Buyreview(
+                                dialogmodify.text.toString(),
+                                main_rb.rating,
+                                main_image.drawable
+                            )
+                        )
 
 
-                        }
-                        .setNegativeButton("취소") { dialogInterface, i ->
+                    }
+                    .setNegativeButton("취소") { dialogInterface, i ->
 
-                        }.show()
+                    }.show()
 
             }
             R.id.remove_dialog -> {
@@ -171,6 +170,7 @@ class ReviewActivity: AppCompatActivity() {
 
             }
         }
+
 
         return super.onContextItemSelected(item)
     }
@@ -180,6 +180,7 @@ class ReviewActivity: AppCompatActivity() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startActivityForResult(intent, IMAGE_PICK_CODE)
+
     }
 
     companion object {
@@ -190,11 +191,16 @@ class ReviewActivity: AppCompatActivity() {
     }
 
     //handle requested permission result
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         when (requestCode) {
             PERMISSION_CODE -> {
                 if (grantResults.size > 0 && grantResults[0] ==
-                        PackageManager.PERMISSION_GRANTED) {
+                    PackageManager.PERMISSION_GRANTED
+                ) {
                     //permission from popup granted
                     pickImageFromGallery()
                 } else {
@@ -205,13 +211,68 @@ class ReviewActivity: AppCompatActivity() {
         }
     }
 
-    //handle result of picked image
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE) {
-            main_image.setImageURI(data?.data)
+    inner class AsyncTaskClass : AsyncTask<Int, Int, Int>() {
+        var imageTask = ImageTask(0)
+
+        override fun onPreExecute() {
+            super.onPreExecute()
+            imageTask
+
+            bar_review.setProgress(imageTask.number)
+
+        }
+
+        override fun doInBackground(vararg p0: Int?): Int {
+            while (isCancelled() == false) {
+                imageTask.number++
+                if (imageTask.number >= 100) {
+                    break
+                } else {
+                    publishProgress(imageTask.number)
+                }
+
+                Thread.sleep(50)
+
+            }
+            return imageTask.number
+        }
+
+
+        override fun onProgressUpdate(vararg values: Int?) {
+            super.onProgressUpdate(*values)
+            bar_review.setProgress(imageTask.number)
+            bar_count.setText(imageTask.number.toString() + "%")
+        }
+
+        override fun onPostExecute(result: Int?) {
+            super.onPostExecute(result)
+            bar_review.setProgress(0)
+            bar_count.setText("완료")
+            imageTask.number==0
+        }
+
+        override fun onCancelled() {
+            super.onCancelled()
+            bar_review.setProgress(0)
         }
     }
 
+    //handle result of picked image
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        var sync = AsyncTaskClass()
+        sync.execute()
+        if (resultCode == Activity.RESULT_OK && requestCode == IMAGE_PICK_CODE) {
+
+            mHandler = Handler()
+            mRunnable = Runnable {
+
+                main_image.setImageURI(data?.data)
+            }
+        }
+        mHandler.postDelayed(
+            mRunnable,5000
+        )
 
 
+    }
 }

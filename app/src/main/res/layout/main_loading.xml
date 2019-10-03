@@ -5,10 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".SplashActivity">
+    tools:context=".SplashActivity"
+    android:background="@color/colorRed">
 
     <ImageView
-        android:src="@drawable/yogiyoroding"
+        android:src="@drawable/yogiyobaner"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

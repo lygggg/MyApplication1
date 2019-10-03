@@ -25,7 +25,6 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_buylist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,28 +46,10 @@
             android:src="@drawable/yogiyo1" />
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="74dp"
-                android:layout_height="wrap_content"
-                android:text="배달요금" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="2,000원" />
-
-        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+
 
 
             <androidx.recyclerview.widget.RecyclerView
@@ -79,6 +60,5 @@
                 tools:listitem="@layout/buy_list"
                 />
 
-        </LinearLayout>
 </LinearLayout>
 </ScrollView>

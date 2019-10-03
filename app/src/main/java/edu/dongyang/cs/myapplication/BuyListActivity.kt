@@ -2,30 +2,24 @@ package edu.dongyang.cs.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.synthetic.main.activity_review.*
-import kotlinx.android.synthetic.main.buy_list.*
-import kotlinx.android.synthetic.main.buyhuride.*
 import kotlinx.android.synthetic.main.buylist.*
-import org.json.JSONArray
-import org.json.JSONObject
+
 
 class BuyListActivity : AppCompatActivity(){
     lateinit var nameKey : String
     lateinit var priceKey : String
-    val jsonArray = JSONArray()
-    val jsonObject = JSONObject()
+
+
     private val adapter by lazy {
-        BuyListAdapter()
+        BuyListAdapter { buyList: BuyList -> buyListClicked(buyList) }
     }
-    private val pref by lazy {
-        this.getPreferences(0)
-    }
-    private val editor by lazy {
-        pref.edit()
-    }
+
     var memoSize: Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,32 +27,21 @@ class BuyListActivity : AppCompatActivity(){
 
         if(intent.hasExtra("nameKey")) {
             Log.d("TAG", "메세지" + "has")
-
+            super.onStop()
+            val builder = AlertDialog.Builder(this)
+            val dialogView =layoutInflater.inflate(R.layout.progress_dialog,null)
+            val message = dialogView.findViewById<TextView>(R.id.message)
+            message.text = "결제 처리중입니다..."
+            builder.setView(dialogView)
+            builder.setCancelable(false)
+            val dialog = builder.create()
+            dialog.show()
+            Handler().postDelayed({dialog.dismiss()},500)
             nameKey = intent.getStringExtra("nameKey").toString()
             priceKey = intent.getStringExtra("priceKey").toString()
+            adapter.addItem(BuyList(nameKey, priceKey))
         }
 
-
-
-
-            btn_buylist.setOnClickListener {
-                adapter.addItem(BuyList(nameKey, priceKey))
-                Log.d("TAG", "메세지" + "add")
-                jsonObject.put("name",nameKey)
-                jsonObject.put("price",priceKey)
-                jsonArray.put(jsonObject)
-                var jsondata = jsonArray.toString()
-                if (memoSize >= 0) {
-
-                    editor.putString("buy${adapter.items.size}", jsondata).apply()
-
-
-
-                    memoSize++
-                    editor.putInt("memoSize", memoSize).apply()
-
-                }
-            }
 
 
 
@@ -69,18 +52,11 @@ class BuyListActivity : AppCompatActivity(){
         rv_buy_list.setHasFixedSize(true)
 
 
-        memoSize = pref.getInt("memoSize", 0)
-        if (memoSize > 0) {
-            Log.d("TAG", "메세지" +"if")
 
-            for (i in 1..memoSize) {
-
-                var name = pref.getString("name","")
-                var price = pref.getString("price","")
-                adapter.addItem(BuyList(name,price))
-                Log.d("TAG", "메세지" +"finish")
-
-            }
-        }
+    }
+    private fun buyListClicked(buyList: BuyList){
+        val intent = Intent(this, ReviewActivity::class.java)
+        intent.putExtra("buyName",buyList.name)
+        startActivity(intent)
     }
 }

@@ -35,13 +35,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="클린리뷰" />
+            android:text="사진촬영" />
 
         <Button
+            android:id="@+id/btn_bring_photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="정보" />
+            android:text="사진가져오기" />
 
     </LinearLayout>
 
@@ -56,37 +57,65 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/dialogTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="4.6"
-                android:textSize="50dp"
-                android:gravity="center"/>
-
-           <RatingBar
-               android:id="@+id/mainRb"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:numStars="5"
-               android:layout_gravity="center_horizontal"/>
-            <TextView
-                android:id="@+id/main_Tv"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="24dp"
+                android:text="리뷰"
                 android:textAlignment="center"
-                />
-            <ImageView
-                android:id="@+id/main_image"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-            <Button
-                android:id="@+id/btn_review"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/main_rb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="리뷰하기"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:numStars="5" />
 
+
+            <EditText
+                android:id="@+id/main_rv"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:ems="10"
+                android:hint="사진과 함께 리뷰 작성시 최대 100포인트 지급 "
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:gravity="top"
+                android:maxLength="200"
+                android:background="@drawable/edittextline"/>
+            <ImageView
+                android:id="@+id/main_image"
+                android:layout_width="200dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"/>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bar_review"
+                style="?android:attr/progressBarStyleHorizontal"/>
+            <TextView
+                android:id="@+id/bar_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"/>
+
+            <Button
+
+                android:layout_gravity="right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="리뷰추가"
+                android:id="@+id/btn_Review"/>
 
         </LinearLayout>
 
@@ -146,13 +175,7 @@
             android:text="삭제"
 
            />
-        <Button
-            android:id="@+id/loadImage_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="사진 가져오기"
 
-            />
 
 
 

@@ -5,15 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.buy_list.view.*
-import kotlinx.android.synthetic.main.item_review.view.*
-import org.jetbrains.anko.image
-import org.json.JSONObject
 
-class BuyListAdapter : RecyclerView.Adapter<BuyListAdapter.TaskViewHolder>() {
+class BuyListAdapter(val clickListener: (BuyList) -> Unit) : RecyclerView.Adapter<BuyListAdapter.TaskViewHolder>() {
 
     var items : MutableList<BuyList> = mutableListOf() //컬렉션 동적 리스트0
 
@@ -30,6 +27,7 @@ class BuyListAdapter : RecyclerView.Adapter<BuyListAdapter.TaskViewHolder>() {
         Log.d("onBindViewholder", ""+position)
         holder.BuyListName.text = items[position].name
         holder.BuyListPrice.text = items[position].price
+        (holder as TaskViewHolder).bind(items[position], clickListener)
 
 
     }
@@ -42,6 +40,11 @@ class BuyListAdapter : RecyclerView.Adapter<BuyListAdapter.TaskViewHolder>() {
     class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var BuyListName: TextView = itemView?.tv_buy_name
         var BuyListPrice: TextView = itemView?.tv_buy_price
+        fun bind(buy: BuyList, clickListener: (BuyList) -> Unit){
+            itemView.setOnClickListener {
+                clickListener(buy)
+            }
+        }
     }
 
 }
