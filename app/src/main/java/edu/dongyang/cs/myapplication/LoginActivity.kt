@@ -19,7 +19,7 @@ class LoginActivity: AppCompatActivity(){
 
 
     }
-    private fun createEmail(){
+    private fun createId(){
         firebasAuth!!.createUserWithEmailAndPassword(edit_email.text.toString(), edit_password.text.toString())
             .addOnCompleteListener(this){
                 if(it.isSuccessful){
@@ -28,6 +28,16 @@ class LoginActivity: AppCompatActivity(){
                 }
                 else{
                     Toast.makeText(this,"계정생성에 실패하였습니다",Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
+    private fun loginId(){
+        firebasAuth!!.signInWithEmailAndPassword(edit_email.text.toString(),edit_password.text.toString())
+            .addOnCompleteListener(this){
+                if(it.isSuccessful){
+                    Toast.makeText(this,"로그인 되었습니다..",Toast.LENGTH_SHORT).show()
+                }else{
+                    Toast.makeText(this,"계정을 생성하였습니다.",Toast.LENGTH_SHORT).show()
                 }
             }
     }
