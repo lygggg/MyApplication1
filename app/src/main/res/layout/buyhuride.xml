@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -37,6 +38,7 @@
 "
                 android:gravity="center"/>
 
+
         </LinearLayout>
 
         <LinearLayout
@@ -69,7 +71,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="16,900원"
+                    android:text="15,000원"
                     android:textSize="20dp" />
             </LinearLayout>
 
@@ -250,12 +252,27 @@
                 android:layout_height="wrap_content"/>
 
         </LinearLayout>
-        <Button
-            android:id="@+id/btn_buy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="결제하기"
-            android:layout_gravity="right"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <ImageButton
+                android:src="@drawable/call"
+                android:id="@+id/number_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/btn_buy"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btn_buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="결제하기"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </ScrollView>

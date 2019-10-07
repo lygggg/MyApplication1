@@ -47,6 +47,7 @@ class BuyListAdapter(val clickListener: (BuyList) -> Unit) : RecyclerView.Adapte
         }
     }
 
+
 }
 
 

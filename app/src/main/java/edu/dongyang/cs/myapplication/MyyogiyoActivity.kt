@@ -3,7 +3,6 @@ package edu.dongyang.cs.myapplication
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.myyogiyo.*
 
 class MyyogiyoActivity : AppCompatActivity(){
@@ -28,7 +27,7 @@ class MyyogiyoActivity : AppCompatActivity(){
             nameTitle = intent.getStringExtra("nameTitle").toString()
             editor.putString("playerName",nameTitle).apply()
         }
-        et_name_title.setText(pref.getString("playerName","로그인을 해주세요"))
+        et_name_title.setText(pref.getString("playerName",""))
         btn_myyogiyo_payment.setOnClickListener {
             val intent = Intent(this, MembershipActivity::class.java)
             startActivity(intent)
@@ -45,8 +44,8 @@ class MyyogiyoActivity : AppCompatActivity(){
             startActivity(intent)
             finish()
         }
-        btn_login.setOnClickListener {
-            val intent = Intent(this, joinActivity::class.java)
+        btn_signup.setOnClickListener {
+            val intent = Intent(this, JoinActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
 
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="회원가입"
+    android:textSize="30dp"
+    android:gravity="center"/>
+    <ImageView
+        android:id="@+id/profile"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/face"/>
     <TableLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:stretchColumns="1">
         <TableRow>
             <TextView
@@ -70,9 +84,6 @@
             android:layout_weight="1"
             android:text="성명" />
         <!--android:text=""이 기본값-->
-        //라디오 버튼이 여러개인 경우 라디오그룹한테 물어보는게 훨씬 빠르다.-> ID달아놓는 이유
-        //RadioButton의 orientaition의 기본값은 vertical이므로 설정을 해주어야함
-
         <RadioGroup
             android:id="@+id/rgGender"
             android:layout_width="0dp"
@@ -251,11 +262,12 @@
 
     <Button
         android:id="@+id/finish_task"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="등록" />
+        android:text="Sign up" />
 
 
 
 </LinearLayout>
+</ScrollView>

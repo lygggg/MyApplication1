@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextClock
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,7 +15,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        var clock = findViewById(R.id.clock) as TextClock
+        clock
 
         Toast.makeText(this, "YOGIYO", Toast.LENGTH_SHORT).show()
          mediaPlayer = MediaPlayer.create(this, R.raw.yogiyo1)

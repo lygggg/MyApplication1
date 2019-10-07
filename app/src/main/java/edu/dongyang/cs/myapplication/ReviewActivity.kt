@@ -68,7 +68,6 @@ class ReviewActivity: AppCompatActivity() {
             dialog.show()
             Handler().postDelayed({ dialog.dismiss() }, 3000)
             adapter.addItem(Buyreview(main_rv.text.toString(), main_rb.rating, main_image.drawable))
-
         }
         rv_review_list.adapter = adapter
         rv_review_list.layoutManager = LinearLayoutManager(this)
@@ -223,6 +222,8 @@ class ReviewActivity: AppCompatActivity() {
         }
 
         override fun doInBackground(vararg p0: Int?): Int {
+            // 스레드가 수행할 작업(생성된 스레드)
+            //여기서 publishProgress()를 사용하여 메인 스레드 접근가능
             while (isCancelled() == false) {
                 imageTask.number++
                 if (imageTask.number >= 100) {
@@ -240,12 +241,16 @@ class ReviewActivity: AppCompatActivity() {
 
         override fun onProgressUpdate(vararg values: Int?) {
             super.onProgressUpdate(*values)
+            // 스레드가 수행되는 사이에 수행할 중간 작업(메인 스레드)
+            // doInBackground()에서
+            //publishProgress() 메소드를 호출하여 중간 작업 수행가능
             bar_review.setProgress(imageTask.number)
             bar_count.setText(imageTask.number.toString() + "%")
         }
 
         override fun onPostExecute(result: Int?) {
             super.onPostExecute(result)
+            // 스레드 작업이 모두 끝난 후에 수행할 작업(메인 스레드)
             bar_review.setProgress(0)
             bar_count.setText("완료")
             imageTask.number==0
@@ -253,6 +258,9 @@ class ReviewActivity: AppCompatActivity() {
 
         override fun onCancelled() {
             super.onCancelled()
+            // cancel() 메소드가 호출되었을때 즉,
+            // 강제로 취소하라는 명령이 호출되었을 때
+            // 스레드가 취소되기 전에 수행할 작업(메인 스레드)
             bar_review.setProgress(0)
         }
     }

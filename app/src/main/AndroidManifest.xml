@@ -112,7 +112,7 @@
             android:name=".PizzaCombnationActivity"
             android:parentActivityName=".MyyogiyoActivity"></activity>
         <activity
-            android:name=".joinActivity"
+            android:name=".JoinActivity"
             android:parentActivityName=".MyyogiyoActivity"></activity>
 
         <activity

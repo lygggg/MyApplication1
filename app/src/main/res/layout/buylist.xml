@@ -25,10 +25,11 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/btn_list_plus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="주문내역" />
+            android:text="구매확정" />
 
 
 
@@ -42,10 +43,8 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="59dp"
+            android:layout_height="match_parent"
             android:src="@drawable/yogiyo1" />
-
-
 
     </LinearLayout>
 

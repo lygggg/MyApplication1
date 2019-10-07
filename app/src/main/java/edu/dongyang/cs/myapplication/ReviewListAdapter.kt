@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.activity_review.view.*
 import kotlinx.android.synthetic.main.item_review.view.*
 import org.jetbrains.anko.image
 import org.jetbrains.anko.imageBitmap
-import org.jetbrains.anko.sdk25.coroutines.onClick
 
 class ReviewListAdapter : RecyclerView.Adapter<ReviewListAdapter.ListViewHolder>(){
     var items : MutableList<Buyreview> = mutableListOf()

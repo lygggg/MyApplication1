@@ -3,6 +3,7 @@ package edu.dongyang.cs.myapplication
 import android.app.ProgressDialog
 
 import android.content.Intent
+import android.net.Uri
 
 import android.os.Bundle
 import android.os.Handler
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.buy_list.*
 
 import kotlinx.android.synthetic.main.buybburingcle.plus_colla
 import kotlinx.android.synthetic.main.buybburingcle.plus_dellisauce
@@ -121,10 +123,20 @@ class HurideActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+        number_call.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:010-9967-7219")
+            if(intent.resolveActivity(packageManager)!= null)
+                startActivity(intent)
 
+            }
         }
 
+
+
     }
+
+
 
 
 
