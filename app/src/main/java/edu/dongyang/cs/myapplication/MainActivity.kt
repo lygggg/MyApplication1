@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextClock
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
         var clock = findViewById(R.id.clock) as TextClock
         clock
 
@@ -22,6 +25,7 @@ class MainActivity : AppCompatActivity() {
          mediaPlayer = MediaPlayer.create(this, R.raw.yogiyo1)
         mediaPlayer?.start()
         btn_main_search.setOnClickListener {
+            Log.d("TAG", "Start")
             val intent = Intent(this, SearchActivity::class.java)
             startActivity(intent)
 

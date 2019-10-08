@@ -3,6 +3,7 @@ package edu.dongyang.cs.myapplication
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.myyogiyo.*
 
 class MyyogiyoActivity : AppCompatActivity(){
@@ -44,10 +45,13 @@ class MyyogiyoActivity : AppCompatActivity(){
             startActivity(intent)
             finish()
         }
-        btn_signup.setOnClickListener {
-            val intent = Intent(this, JoinActivity::class.java)
+        btn_login.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
+        }
+        btn_logout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
         }
 
     }
