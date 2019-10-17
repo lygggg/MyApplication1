@@ -20,13 +20,14 @@ import androidx.core.app.ComponentActivity
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
+import com.google.firebase.database.FirebaseDatabase
 
 
 class LoginActivity: AppCompatActivity(){
     private val RC_SIGN_IN = 9001
     private var mGoogleSignInClient: GoogleSignInClient? = null
     private lateinit var firebasAuth : FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,10 +63,13 @@ class LoginActivity: AppCompatActivity(){
         firebasAuth!!.signInWithEmailAndPassword(edit_email.text.toString(),edit_password.text.toString())
             .addOnCompleteListener(this){
                 if(it.isSuccessful){
-                    Toast.makeText(this,"로그인 되었습니다..",Toast.LENGTH_SHORT).show()
-                    finish()
+
+                    var user = firebasAuth?.currentUser
+                    var name = user!!.displayName
+                    Toast.makeText(this,"로그인 되었습니다.."+name,Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, ChatRoomActivity::class.java))
                 }else{
-                    Toast.makeText(this,"계정을 생성하였습니다.",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"로그인에 실패하셨습니다.",Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -83,14 +87,18 @@ class LoginActivity: AppCompatActivity(){
             }
         }
     }
-    private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount){
-        val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
+    private fun firebaseAuthWithGoogle(account: GoogleSignInAccount){
+        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         firebasAuth.signInWithCredential(credential)
             .addOnCompleteListener(this){task->
                 if(task.isSuccessful){
-                    Toast.makeText(this,"sc..",Toast.LENGTH_SHORT).show()
                     val user = firebasAuth.currentUser
+                    var name = user!!.email
                     Toast.makeText(this,"로그인 되었습니다..",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, ChatRoomActivity::class.java)
+                    intent.putExtra("userName",name.toString() )
+                    startActivity(intent)
+
                 }else{
                     Toast.makeText(this,"로그인을 실패하였습니다..",Toast.LENGTH_SHORT).show()
                 }

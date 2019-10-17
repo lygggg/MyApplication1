@@ -2,6 +2,7 @@ package edu.dongyang.cs.myapplication
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.myyogiyo.*
@@ -52,6 +53,7 @@ class MyyogiyoActivity : AppCompatActivity(){
         }
         btn_logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
+            Toast.makeText(this,"로그아웃했습니다.", Toast.LENGTH_SHORT).show()
         }
 
     }

@@ -10,6 +10,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.joinn.*
 import kotlinx.android.synthetic.main.login.*
+import androidx.databinding.adapters.NumberPickerBindingAdapter.setValue
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class JoinActivity : AppCompatActivity() {
     private var firebasAuth : FirebaseAuth? = null
@@ -17,6 +25,7 @@ class JoinActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.joinn)
         firebasAuth = FirebaseAuth.getInstance()
+
         finish_task.setOnClickListener {
             val builder = AlertDialog.Builder(this)
             val dialogView = layoutInflater.inflate(R.layout.progress_dialog, null)

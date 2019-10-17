@@ -8,6 +8,13 @@
 
     <string name="banner_ad_unit_id_for_test">ca-app-pub-3940256099942544/6300978111</string>
     <string name="title_activity_maps">Map</string>
+    <string name="username">Username</string>
+    <string name="join_chat">Join Chat</string>
+    <string name="send">Send</string>
+    <string name="enter_message">Enter message…</string>
+
+    <string name="appID">YOUR_APP_ID_HERE</string>
+    <string name="apiKey">YOUR_API_KEY_HERE</string>
 
 </resources>
 

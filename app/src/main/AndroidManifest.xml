@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.dongyang.cs.myapplication">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    package="edu.dongyang.cs.myapplication"
+    >
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -19,7 +20,9 @@
         android:supportsRtl="true"
         android:name=".YogiyoApp"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        android:banner="@color/colorPrimaryDark">
+        android:banner="@color/colorPrimaryDark"
+        tools:replace="theme, icon, label"
+        >
 
 
         <!--
@@ -123,6 +126,20 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".MyyogiyoActivity"></activity>
+        <activity
+            android:name=".ChatRoomActivity"
+            android:parentActivityName=".MyyogiyoActivity"></activity>
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+
+        </service>
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+
     </application>
 
 </manifest>

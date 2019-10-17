@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.animation.AnimationUtils
 import android.widget.TextClock
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
+        val animation = AnimationUtils.loadAnimation(this,R.anim.hyperspace_jump)
+        main.startAnimation(animation)
         var clock = findViewById(R.id.clock) as TextClock
         clock
 

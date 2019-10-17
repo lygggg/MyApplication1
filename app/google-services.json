@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "161174294989",
-    "firebase_url": "https://my-yogiyo-lyg.firebaseio.com",
-    "project_id": "my-yogiyo-lyg",
-    "storage_bucket": "my-yogiyo-lyg.appspot.com"
+    "project_number": "349634145194",
+    "firebase_url": "https://my-yogiyo109.firebaseio.com",
+    "project_id": "my-yogiyo109",
+    "storage_bucket": "my-yogiyo109.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:161174294989:android:c3d360f904affbf9cf7484",
+        "mobilesdk_app_id": "1:349634145194:android:c35440257acd19145459d3",
         "android_client_info": {
           "package_name": "edu.dongyang.cs.myapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "161174294989-uc882cudh040f7mmvv6jgsvmvme172k5.apps.googleusercontent.com",
+          "client_id": "349634145194-jim2dpo9c0equdpm96dc4dd4mlc11sbn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.dongyang.cs.myapplication",
+            "certificate_hash": "11d8d9d814fe69a8d3f47a52263898cc18ac43c6"
+          }
+        },
+        {
+          "client_id": "349634145194-iorlf0c7984ed4arermalelgbf3suavn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCfHsrG9TpZZZHh5GC2oBwbBDcUfcsU5fo"
+          "current_key": "AIzaSyB5HLmN-9HDHwPOAuUKkJDn7DBHyNUB6HY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "161174294989-uc882cudh040f7mmvv6jgsvmvme172k5.apps.googleusercontent.com",
+              "client_id": "349634145194-iorlf0c7984ed4arermalelgbf3suavn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
